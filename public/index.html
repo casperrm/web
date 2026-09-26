@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Web Design &amp; Development — Cedar Point Media</title>
+    <meta
+      name="description"
+      content="Tell Cedar Point Media about your website project. We'll review your requirements and prepare a personalized quotation."
+    />
+    <meta name="theme-color" content="#070a12" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <!-- Drop the original Cedar Point Media logo file at assets/logo.png. -->
+        <img class="hero__logo" src="assets/logo.png" alt="Cedar Point Media" data-logo hidden />
+        <p class="hero__brand">CEDAR POINT MEDIA</p>
+        <h1 class="hero__title">Web Design &amp; Development</h1>
+        <p class="hero__subtitle">
+          Tell us about your project. We'll review your requirements and prepare a personalized
+          quotation.
+        </p>
+      </header>
+
+      <section class="card" aria-live="polite">
+        <form id="intake-form" class="form" novalidate>
+          <div class="alert alert--error" id="form-error" role="alert" tabindex="-1" hidden></div>
+
+          <!-- Your details -->
+          <fieldset class="section">
+            <legend class="section__title"><span>01</span>Your details</legend>
+            <div class="grid">
+              <div class="field">
+                <label for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="120" required aria-describedby="fullName-error" />
+                <p class="field__error" id="fullName-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="businessName">Business / Company Name <span class="req" aria-hidden="true">*</span></label>
+                <input id="businessName" name="businessName" type="text" autocomplete="organization" maxlength="160" required aria-describedby="businessName-error" />
+                <p class="field__error" id="businessName-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby="email-error" />
+                <p class="field__error" id="email-error" hidden></p>
+              </div>
+              <div class="field">
+                <label for="whatsapp">WhatsApp Number <span class="req" aria-hidden="true">*</span></label>
+                <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" maxlength="32" placeholder="+961 3 123 456" required aria-describedby="whatsapp-hint whatsapp-error" />
+                <p class="field__hint" id="whatsapp-hint">Include your country code.</p>
+                <p class="field__error" id="whatsapp-error" hidden></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Your project -->
+          <fieldset class="section">
+            <legend class="section__title"><span>02</span>Your project</legend>
+
+            <div class="field">
+              <label for="businessDescription">What does your business do? <span class="req" aria-hidden="true">*</span></label>
+              <input id="businessDescription" name="businessDescription" type="text" maxlength="300" placeholder="e.g. Family-run bakery in Beirut" required aria-describedby="businessDescription-error" />
+              <p class="field__error" id="businessDescription-error" hidden></p>
+            </div>
+
+            <fieldset class="field group" data-group="websiteType" aria-describedby="websiteType-error" aria-required="true">
+              <legend>What type of website do you need? <span class="req" aria-hidden="true">*</span></legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="websiteType" value="Business Website" /><span>Business Website</span></label>
+                <label class="option"><input type="radio" name="websiteType" value="Company Website" /><span>Company Website</span></label>
+                <label class="option"><input type="radio" name="websiteType" value="Portfolio" /><span>Portfolio</span></label>
+                <label class="option"><input type="radio" name="websiteType" value="Restaurant / Menu Website" /><span>Restaurant / Menu Website</span></label>
+                <label class="option"><input type="radio" name="websiteType" value="Landing Page" /><span>Landing Page</span></label>
+                <label class="option"><input type="radio" name="websiteType" value="Other" /><span>Other</span></label>
+              </div>
+              <div class="other" data-other-for="websiteType" hidden>
+                <label for="websiteTypeOther" class="visually-hidden">Please specify the type of website</label>
+                <input id="websiteTypeOther" name="websiteTypeOther" type="text" maxlength="120" placeholder="Please specify" aria-describedby="websiteTypeOther-error" />
+                <p class="field__error" id="websiteTypeOther-error" hidden></p>
+              </div>
+              <p class="field__error" id="websiteType-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="field group" data-group="pageCount" aria-describedby="pageCount-error" aria-required="true">
+              <legend>How many pages do you think you need? <span class="req" aria-hidden="true">*</span></legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="pageCount" value="1–3" /><span>1–3</span></label>
+                <label class="option"><input type="radio" name="pageCount" value="4–6" /><span>4–6</span></label>
+                <label class="option"><input type="radio" name="pageCount" value="7–10" /><span>7–10</span></label>
+                <label class="option"><input type="radio" name="pageCount" value="10+" /><span>10+</span></label>
+                <label class="option"><input type="radio" name="pageCount" value="I'm not sure" /><span>I'm not sure</span></label>
+              </div>
+              <p class="field__error" id="pageCount-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="field group" data-group="features" aria-describedby="features-hint features-error">
+              <legend>Which features do you need?</legend>
+              <p class="field__hint" id="features-hint">Select all that apply.</p>
+              <div class="options">
+                <label class="option"><input type="checkbox" name="features" value="Contact Form" /><span>Contact Form</span></label>
+                <label class="option"><input type="checkbox" name="features" value="WhatsApp" /><span>WhatsApp</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Google Maps" /><span>Google Maps</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Gallery / Portfolio" /><span>Gallery / Portfolio</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Quote Request Form" /><span>Quote Request Form</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Booking / Appointments" /><span>Booking / Appointments</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Blog / News" /><span>Blog / News</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Client-editable content (CMS)" /><span>Client-editable content (CMS)</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Animations" /><span>Animations</span></label>
+                <label class="option"><input type="checkbox" name="features" value="Other" /><span>Other</span></label>
+                <label class="option"><input type="checkbox" name="features" value="I'm not sure" /><span>I'm not sure</span></label>
+              </div>
+              <div class="other" data-other-for="features" hidden>
+                <label for="featuresOther" class="visually-hidden">Please specify other features</label>
+                <input id="featuresOther" name="featuresOther" type="text" maxlength="200" placeholder="Please specify" aria-describedby="featuresOther-error" />
+                <p class="field__error" id="featuresOther-error" hidden></p>
+              </div>
+              <p class="field__error" id="features-error" hidden></p>
+            </fieldset>
+          </fieldset>
+
+          <!-- What you already have -->
+          <fieldset class="section">
+            <legend class="section__title"><span>03</span>What you already have</legend>
+
+            <fieldset class="field group" data-group="hasBranding" aria-describedby="hasBranding-error">
+              <legend>Do you already have a logo / brand identity?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="hasBranding" value="Yes" /><span>Yes</span></label>
+                <label class="option"><input type="radio" name="hasBranding" value="No" /><span>No</span></label>
+              </div>
+              <p class="field__error" id="hasBranding-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="field group" data-group="hasDomain" aria-describedby="hasDomain-error">
+              <legend>Do you already own a domain?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="hasDomain" value="Yes" /><span>Yes</span></label>
+                <label class="option"><input type="radio" name="hasDomain" value="No" /><span>No</span></label>
+                <label class="option"><input type="radio" name="hasDomain" value="I'm not sure" /><span>I'm not sure</span></label>
+              </div>
+              <p class="field__error" id="hasDomain-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="field group" data-group="hasContent" aria-describedby="hasContent-error">
+              <legend>Do you already have website content and photos?</legend>
+              <div class="options">
+                <label class="option"><input type="radio" name="hasContent" value="Yes" /><span>Yes</span></label>
+                <label class="option"><input type="radio" name="hasContent" value="Partially" /><span>Partially</span></label>
+                <label class="option"><input type="radio" name="hasContent" value="No" /><span>No</span></label>
+              </div>
+              <p class="field__error" id="hasContent-error" hidden></p>
+            </fieldset>
+
+            <fieldset class="field group" data-group="languages" aria-describedby="languages-hint languages-error">
+              <legend>Website languages</legend>
+              <p class="field__hint" id="languages-hint">Select all that apply.</p>
+              <div class="options">
+                <label class="option"><input type="checkbox" name="languages" value="English" /><span>English</span></label>
+                <label class="option"><input type="checkbox" name="languages" value="Arabic" /><span>Arabic</span></label>
+                <label class="option"><input type="checkbox" name="languages" value="French" /><span>French</span></label>
+              </div>
+              <p class="field__error" id="languages-error" hidden></p>
+            </fieldset>
+          </fieldset>
+
+          <!-- References & goals -->
+          <fieldset class="section">
+            <legend class="section__title"><span>04</span>References &amp; goals</legend>
+
+            <div class="field">
+              <label for="existingWebsite">Do you have an existing website? <span class="opt">Optional</span></label>
+              <input id="existingWebsite" name="existingWebsite" type="url" inputmode="url" autocomplete="url" maxlength="300" placeholder="www.yourbusiness.com" aria-describedby="existingWebsite-error" />
+              <p class="field__error" id="existingWebsite-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="inspiration">Website examples you like <span class="opt">Optional</span></label>
+              <textarea id="inspiration" name="inspiration" rows="3" maxlength="1000" placeholder="Paste links or describe what you like about them" aria-describedby="inspiration-error"></textarea>
+              <p class="field__error" id="inspiration-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="mainGoal">What is the main goal of your website? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="mainGoal" name="mainGoal" rows="5" maxlength="2000" placeholder="e.g. Get more bookings, look more professional, show our menu online…" required aria-describedby="mainGoal-error"></textarea>
+              <p class="field__error" id="mainGoal-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label for="additionalInfo">Anything else we should know? <span class="opt">Optional</span></label>
+              <textarea id="additionalInfo" name="additionalInfo" rows="4" maxlength="2000" placeholder="Deadlines, budget range, special requirements…" aria-describedby="additionalInfo-error"></textarea>
+              <p class="field__error" id="additionalInfo-error" hidden></p>
+            </div>
+          </fieldset>
+
+          <!-- Spam protection: hidden from people, irresistible to bots. -->
+          <div class="hp" aria-hidden="true">
+            <label for="company_website">Leave this field empty</label>
+            <input id="company_website" name="company_website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="captcha" id="captcha" hidden></div>
+
+          <div class="submit">
+            <button type="submit" class="button" id="submit-button">
+              <span class="button__label">REQUEST MY QUOTE</span>
+              <span class="button__spinner" aria-hidden="true"></span>
+            </button>
+            <p class="submit__note"><span class="req" aria-hidden="true">*</span> Required fields</p>
+          </div>
+        </form>
+
+        <div class="success" id="success" tabindex="-1" hidden>
+          <div class="success__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+          </div>
+          <h2 class="success__title">Thank you.</h2>
+          <p>Your project request has been received.</p>
+          <p>
+            Cedar Point Media will review your requirements and contact you with a personalized
+            quotation.
+          </p>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© <span data-year></span> Cedar Point Media. All rights reserved.</p>
+      </footer>
+    </main>
+  </body>
+</html>
